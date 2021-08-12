@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app-service';
+import { EmployeeInfo } from '../Models/EmployeeInfo';
+import { EmployeeService } from '../Services/EmployeeService';
 
 @Component({
   selector: 'app-current-year',
@@ -7,15 +9,15 @@ import { AppService } from '../app-service';
   styleUrls: ['./current-year.component.scss']
 })
 export class CurrentYearComponent implements OnInit {
-  greetings = '';
+  public info : EmployeeInfo = {fullName : "", departName : "", chiefFullName : ""};
 
-  constructor(private _appService: AppService) { }
+  constructor(private _employeeService: EmployeeService) { }
 
   ngOnInit(): void {
-    this._appService.forecast()
+    this._employeeService.employeeInfo()
       .subscribe(
       result => {
-        this.greetings = result;
+        this.info = result;
       }
       );
   }

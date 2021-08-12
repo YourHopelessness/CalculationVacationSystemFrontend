@@ -1,0 +1,67 @@
+<nav class="autohide-navbar navbar navbar-expand-lg navbar-light shadow-lg p-3 mb-5 bg-white rounded">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+        <!-- Navbar brand -->
+        <a class="navbar-brand active" href="#">Система расчета отпусков</a>
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link waves-grey" mdbWavesEffect routerLink="CurrentYear" ngif="routerLinkActive">
+              Текущий год<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-grey" mdbWavesEffect routerLink="NextYear">
+              Следующий год</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-grey" mdbWavesEffect routerLink="MyVacations">
+              Мои отпуска</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link waves-grey" mdbWavesEffect routerLink="Requests">
+                Заявки</a>
+            </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+  
+      <!-- Right elements -->
+      <div class="d-flex align-items-center">
+        <!-- Icon -->
+        <ul class="navbar-nav ml-auto" routerLinkActive="active">
+          <li class="nav-item">
+            <a class="nav-link waves-grey" mdbWavesEffect routerLink="Notifications"><mdb-icon fas icon="envelope" ></mdb-icon> Уведомления<span class="sr-only">(current)</span></a>
+          </li>
+    
+          <!-- Dropdown -->
+          <li class="nav-item dropdown" dropdown routerLinkActive="active">
+            <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-grey" mdbWavesEffect>
+              <mdb-icon fas icon="user"></mdb-icon> Личный кабинет<span class="caret"></span></a>
+            <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+              <a class="dropdown-item waves-grey" mdbWavesEffect routerLink="Profile">Мой профиль</a>
+              <a class="dropdown-item waves-grey" mdbWavesEffect routerLink="LogOut">Выйти</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+<router-outlet></router-outlet>

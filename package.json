@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --ssl --disable-host-check",
+    "start": "ng serve --ssl --disable-host-check --ssl-key server.key --ssl-cert server.crt",
     "build": "ng build --prod --output-path ../CalculationVacationSystem.WebApi/wwwroot",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

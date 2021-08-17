@@ -10,6 +10,10 @@ import { CurrentYearComponent } from './current-year/current-year.component';
 import { NextYearComponent } from './next-year/next-year.component';
 import { MyVacationComponent } from './my-vacation/my-vacation.component';
 import { CalendarActionsComponent } from './calendar-actions/calendar-actions.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+import { AuthGuard } from './guards/auth';
+import { AuthService } from './Services/AuthService';
 
 @NgModule({
   declarations: [
@@ -18,15 +22,22 @@ import { CalendarActionsComponent } from './calendar-actions/calendar-actions.co
     CurrentYearComponent,
     NextYearComponent,
     MyVacationComponent,
-    CalendarActionsComponent
+    CalendarActionsComponent,
+    LoginComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
-  providers: [AppService],
+  providers: [
+    AppService,
+    AuthGuard,
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
